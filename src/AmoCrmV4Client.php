@@ -180,6 +180,7 @@ class AmoCrmV4Client
             } else
                 $url = 'https://' . $this->subDomain . '.amocrm.ru/api/v4/' . $service;
 
+
             $result = json_decode($this->CurlRequest($url, 'GET'), true);
 
             usleep(250000);

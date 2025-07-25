@@ -31,9 +31,20 @@ class Main
     public function moveLeadFromBidToWaitingIfItsSumMore5000(): void
     {
         $sum = 5000;
-        $leads = $this->leadsGetter->getLeadsOnBidInVaronca();
+        $leads = $this->leadsGetter->getLeadsInVaroncaOnBid();
         $leads = $this->leadFilter->SumMore($leads, $sum);
         $this->leadsPatcher->moveLeadToWaiting($leads);
+    }
+
+    public function copyLeadFromInClientApproveIfSumEqual4999(): void
+    {
+        $sum = 4999;
+        $leads = $this->leadsGetter->getLeadsInVaroncaOnClientApprove();
+        $leads = $this->leadFilter->SumEqual($leads, $sum);
+//        $leads = $this->leadsGetter->addTasksAndNotes($leads);
+        var_dump($leads);
+        $this->leadsPoster->createLeadsOnWaitingWithTasksAndNotes($leads);
+
     }
 
 

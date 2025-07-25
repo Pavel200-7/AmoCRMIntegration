@@ -9,9 +9,9 @@ ini_set('xdebug.var_display_max_depth', 10); // увеличивает макс�
 require_once __DIR__ . '/src/Main.php';
 
 
-
 $main = new Main();
-$main->moveLeadFromBidToWaitingIfItsSumMore5000();
+//$main->moveLeadFromBidToWaitingIfItsSumMore5000();
+$main->copyLeadFromInClientApproveIfSumEqual4999();
 
 
 
