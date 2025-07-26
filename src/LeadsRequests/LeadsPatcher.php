@@ -2,10 +2,16 @@
 
 require_once dirname(__DIR__) . '/AmoCrmDescriptor.php';
 
+/*
+ * Класс для размещения методов PATCH запросов
+ */
 class LeadsPatcher extends AmoCrmDescriptor
 {
     private const WAIT_STATUS = 78688250;
 
+    /*
+     * Изменяет статус лида на "Ожидание клиента"
+     */
     public function moveLeadToWaiting(array $leads): void
     {
         $params = $this->getParamsForChangingStatus($leads, self::WAIT_STATUS);

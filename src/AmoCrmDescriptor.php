@@ -2,6 +2,10 @@
 
 require_once 'AmoCrmV4Client.php';
 
+/*
+ * Инициализирует класс для работы API AmoCRM
+ * и переносит интерфейсы работы с ней в дочерние классы
+ */
 abstract class AmoCrmDescriptor
 {
     private AmoCrmV4Client $client;

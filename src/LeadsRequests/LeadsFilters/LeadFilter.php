@@ -1,6 +1,11 @@
 <?php
 
 require_once __DIR__ . '/LeadsSumFilter.php';
+
+ /*
+  * Класс - интерфейс делегатов фильтров
+  */
+
 class LeadFilter
 {
     private LeadsSumFilter $leadsSumFilter;

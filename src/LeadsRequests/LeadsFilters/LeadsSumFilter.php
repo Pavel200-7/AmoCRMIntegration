@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * Фильтрует исходную выборку лидов по сумме
+ */
+
 class LeadsSumFilter
 {
     public function getLeadsWithSumMore(array $leads, int $sum): array
